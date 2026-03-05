@@ -333,24 +333,20 @@ def build_workload_profiles(**kwargs):
                 wp_file_list.append(f'5_cluster_{profile}.csv')
     
         case "some_clusters":
-            print(f"Creating custom cluster workload profiles for: {profile_list}")
+            print("Creating custom cluster workload profiles.")
             workload_profiles = vm_data_df.groupby('cluster')
-            
-            # Normalize user input ONCE outside the loop
-            normalized_input = [str(p).lower().strip() for p in profile_list]
 
-            for cluster_name, profile_df in workload_profiles:
-                # Ensure we are comparing clean strings
-                current_cluster = str(cluster_name).strip()
-                
-                if current_cluster.lower() in normalized_input:
-                    # Create a safe filename (no spaces)
-                    clean_filename = current_cluster.replace(" ", "_")
-                    fname = f'5_cluster_{clean_filename}.csv'
-                    
-                    profile_df.to_csv(f'{output_path}{fname}')
-                    wp_file_list.append(fname)
-                    print(f"  - Created profile: {fname}") # Added for visibility
+            # for list of clusters to keep, export to csv
+            for profile, profile_df in workload_profiles:
+                if profile in profile_list:
+                    profile_df.to_csv(f'{output_path}5_cluster_{profile}.csv')
+                    wp_file_list.append(f'5_cluster_{profile}.csv')
+
+            # if desired in original DF, drop rows for exported clusters
+            if kwargs['include_remaining'] == True:
+                vm_data_df_trimmed = vm_data_df[vm_data_df.cluster.isin(profile_list) == False]
+                vm_data_df_trimmed.to_csv(f'{output_path}5_cluster_remainder.csv')
+                wp_file_list.append('5_cluster_remainder.csv')
 
         case "os":
             print("Creating workload profiles based on GUEST OPERATING SYSTEM using text match.")

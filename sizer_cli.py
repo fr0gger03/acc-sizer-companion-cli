@@ -50,9 +50,9 @@ def main():
 
     preparation_parser = subparsers.add_parser('prepare', formatter_class=MyFormatter, parents=[parent_import_parser], help='Import one or more files and transform the data for use with sizing tools.')
     preparation_parser.add_argument('-exfil', '--exclude_filter', nargs = '+', help = 'A space-separated list of text strings used to identify workloads to exclude.')
-    preparation_parser.add_argument('-eff', '--exclude_filter_field', choices = ['cluster','os','vmName'], help = 'The column/field used for exclusion filtering.')
+    preparation_parser.add_argument('-eff', '--exclude_filter_field', choices = ['cluster','os','vmName'], help = 'The column/field used for exclusion filtering.  If filtering by vmName the string(s) must be an exact match.')
     preparation_parser.add_argument('-infil', '--include_filter', nargs = '+', help = 'A space-separated list of text strings used to identify workloads to keep.')
-    preparation_parser.add_argument('-iff', '--include_filter_field', choices = ['cluster','os','vmName'], help = "The column/field used for inclusion filtering.")
+    preparation_parser.add_argument('-iff', '--include_filter_field', choices = ['cluster','os','vmName'], help = "The column/field used for inclusion filtering.  If filtering by vmName the string(s) must be an exact match.")
     preparation_parser.add_argument('-ps', '--power_state',  choices = ['p', 'ps'], type=str.lower, help = "By default, all VM are included regardless of powere state. Use to specify whether to include only those (p)owered on, or powered on and suspended (ps).")
     preparation_parser.add_argument('-wp', '--workload_profiles', choices=['all_clusters', 'some_clusters', 'os','vmName'], help = "Use to create workload profiles based on the selected grouping.")
     preparation_parser.add_argument('-pl', '--profile_list', nargs = '+', help = 'A space-separated list of text strings used to filter workloads for the creation of workload profiles.')
