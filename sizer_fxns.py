@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# VMware Cloud Sizer Companion CLI - functions module
+# ACC Sizer Companion CLI - functions module
 ################################################################################
 ### Copyright 2023 VMware, Inc.
 ### SPDX-License-Identifier: MIT License

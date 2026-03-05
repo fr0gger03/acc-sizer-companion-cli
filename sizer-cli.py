@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# VMware Cloud Foundation Sizing Companion CLI - main module
+# ACC Foundation Sizing Companion CLI - main module
 ################################################################################
 ### Copyright 2026 VMware, Inc.
 ### SPDX-License-Identifier: MIT License
@@ -18,12 +18,15 @@ def main():
 
     ap = argparse.ArgumentParser(
                     prog = 'sizer-cli.py',
-                    description = 'A Command-line companion for the VMware Cloud Sizer.',
+                    description = 'A Command-line companion for the ACC Sizer.',
                     formatter_class=MyFormatter, usage=SUPPRESS,
                     epilog='''
-    Welcome to the VMC Sizer Companion CLI!! \n\n
-    This tool is used to help you send and receive sizing recommendations from the VMware Cloud Sizer quickly and reliably, with a number of available options.
-    The script acn be used to import data from from either RVTools or LiveOptics (DO NOT MODIFY the original files), or simply receive a 'quick sizing' from the sizer.
+    Welcome to the ACC Companion CLI!! \n\n
+    This tool is used to help you prepare raw data from your customer for the ACC Sizer quickly and reliably, with a number of available options.
+    The script acn be used to import data from from either RVTools or LiveOptics (DO NOT MODIFY the original files).  Common use cases are to quickly include or exclude
+    powered-off virtual machines, specific clusters or virtual machines by naming patterns, etc.  Further it will normalize the data from either RV Tools or LiveOptics
+    into a common set of inputs ready for the sizer tools. 
+    Please do not edit or modify the source RV Tools or LiveOptics file(s) in any way - the tool depends on original file structure for the functions to work.
     Use arguments at the command line to transform the data before you receive your sizing!\n\n
     ''')
 
