@@ -1,6 +1,36 @@
-.DS_Store
-__pycache__/
+# uv lockfile (OPTIONAL - see note below)
+# uv.lock
 
-# Except this file
-!.gitignore
-venv-sizer
+# uv cache (usually stored globally, but good to have)
+.uv/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables (NEVER commit these)
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Type checking & Linting
+.mypy_cache/
+.ruff_cache/
+
+# IDEs
+.vscode/
+.idea/
+.DS_Store
