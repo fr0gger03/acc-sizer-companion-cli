@@ -1,4 +1,4 @@
-# ACC Sizer Companion CLI
+# Sizer Companion CLI
 
 A Python command-line tool that normalizes virtual machine inventory data from **RVTools** or **LiveOptics** exports into clean, standardized CSV files suitable for use with VMware Cloud Foundation sizing tools.
 
@@ -39,7 +39,7 @@ Then this tool is for you - quickly process one or many spreadsheets (LiveOptics
 ```zsh path=null start=null
 # Clone the repository
 git clone <repo-url>
-cd acc-sizer-companion-cli
+cd sizer-companion-cli
 
 # Install dependencies with uv
 uv sync
@@ -119,7 +119,7 @@ uv run sizer_cli.py prepare -fn site1.xlsx site2.xlsx -ft rv-tools
 ## Project Structure
 
 ```
-acc-sizer-companion-cli/
+sizer-companion-cli/
 ├── sizer_cli.py        # CLI entry point — argument parsing and subcommands
 ├── sizer_fxns.py       # Orchestration logic for describe and prepare workflows
 ├── data_transform.py   # Data import, normalization, filtering, and profiling
