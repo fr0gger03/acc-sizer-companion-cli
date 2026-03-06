@@ -4,6 +4,21 @@ A Python command-line tool that normalizes virtual machine inventory data from *
 
 Forked from the [VMware Cloud Sizer Companion CLI](https://github.com/vmware-samples/vmware-cloud-sizer-companion-cli) and repurposed for general workload inventory normalization.
 
+## Description
+
+**Eliminate the tedious work**
+Has this ever happened to you?  You need to run some calculations to determine how much infrastructure capacity you need for a project - maybe it's a migration, maybe a DR project, maybe a storage migration, maybe sizing for a ransomware isolated recovery environment.
+
+If you have ever struggled with questions such as...
+
+- I have many workloads across **multiple environments** - how do I quickly process **multiple spreadsheets**?
+- should I use how much capacity is **configured** or how much is **utilized**?
+- can or should I keep my current **cluster alignment**?
+- how do I quickly eliminate (or keep) virtual machines that are **powered off**?
+- how do I only process specific workloads by **name**, **operating system**, or **cluster**?
+
+Then this tool is for you - quickly process one or many spreadsheets (LiveOptics or RV-Tools), and include or exclude workloads or clusters, your workloads by operating system, cluster, or naming patterns.  Select all virtual machines, or only those powered on, or powered on and suspended.  Quickly get a clean set of inputs for processing sizing exercises.
+
 ## Features
 
 - **Import** VM inventory from one or more RVTools or LiveOptics `.xlsx` exports
