@@ -7,6 +7,7 @@ Forked from the [VMware Cloud Sizer Companion CLI](https://github.com/vmware-sam
 ## Description
 
 **Eliminate the tedious work**
+
 Has this ever happened to you?  You need to run some calculations to determine how much infrastructure capacity you need for a project - maybe it's a migration, maybe a DR project, maybe a storage migration, maybe sizing for a ransomware isolated recovery environment.
 
 If you have ever struggled with questions such as...
